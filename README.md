@@ -91,7 +91,7 @@ NEXT_PUBLIC_API_URL=https://govigi-app-1.onrender.com
 ```
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-PORT=5000
+PORT=8000
 ```
 
 ---
@@ -112,6 +112,8 @@ cd govigi-app
 ```
 cd backend
 npm install
+node src/seed.js   # Seed sample products
+node server.js     # or: npm start
 npm start
 ```
 
@@ -132,6 +134,8 @@ npm run dev
 ```
 cd mobile
 npm install
+# Update your Mac's IP in mobile/lib/axios.js before running
+# Find IP with: ipconfig getifaddr en0
 npx expo start
 ```
 
@@ -144,6 +148,7 @@ npx expo start
 * `GET /api/products` → Get all products
 * `POST /api/orders` → Place an order
 * `GET /api/orders` → Get user orders
+* PUT /api/orders/:id  → Update order status
 
 ---
 
